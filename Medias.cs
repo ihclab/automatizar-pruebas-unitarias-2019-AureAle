@@ -19,13 +19,17 @@ namespace AutomatizarPruebasUnitarias {
             Console.WriteLine( "MediaGeométrica: " + md.mediaGeometrica(geo));*/
 
             var path = @"/Users/dcl21n15/Desktop/automatizar-pruebas-unitarias-2019-AureAle/CasosPrueba.txt";
+            String[] partes = null; String text = "";
             using (var reader = new StreamReader(path))
             {
             while (!reader.EndOfStream)
                 {
-                reader.ReadLine();
+                
+                text = reader.ReadLine();
+                partes = text.Split(":");
                 }
-            }   
+            } 
+
         }
 
         /**
@@ -64,7 +68,7 @@ namespace AutomatizarPruebasUnitarias {
                producto = producto * vals[i];
             }
             
-            double mediaGeometrica= Math.Pow(producto,1/size);
+            double mediaGeometrica= Math.Pow(producto,1/size); //raizEnesima(producto,size);
             return mediaGeometrica;
          }
 
