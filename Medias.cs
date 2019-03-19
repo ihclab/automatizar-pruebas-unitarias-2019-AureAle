@@ -10,16 +10,22 @@ namespace AutomatizarPruebasUnitarias {
 
         static void Main(){
 
-            int[] vals = new int[] { 2, 4, 8};
+            /*int[] vals = new int[] { 2, 4, 8};
             int[] geo = new int[] { 1, 2, 4, 8, 16, 32};
             
             Medias md = new Medias();
             Console.WriteLine( "Media: " + mediaAritmetica(vals));
             Console.WriteLine( "Raíz: " + raizEnesima(12,3));    
-            Console.WriteLine( "MediaGeométrica: " + md.mediaGeometrica(geo));
+            Console.WriteLine( "MediaGeométrica: " + md.mediaGeometrica(geo));*/
 
-
-
+            var path = @"/Users/dcl21n15/Desktop/automatizar-pruebas-unitarias-2019-AureAle/CasosPrueba.txt";
+            using (var reader = new StreamReader(path))
+            {
+            while (!reader.EndOfStream)
+                {
+                reader.ReadLine();
+                }
+            }   
         }
 
         /**
