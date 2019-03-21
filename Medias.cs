@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,30 +8,6 @@ using System.Threading.Tasks;
 namespace AutomatizarPruebasUnitarias {
     
     class Medias {
-
-        static void Main(){
-
-            /*int[] vals = new int[] { 2, 4, 8};
-            int[] geo = new int[] { 1, 2, 4, 8, 16, 32};
-            
-            Medias md = new Medias();
-            Console.WriteLine( "Media: " + mediaAritmetica(vals));
-            Console.WriteLine( "Raíz: " + raizEnesima(12,3));    
-            Console.WriteLine( "MediaGeométrica: " + md.mediaGeometrica(geo));*/
-
-            var path = @"/Users/dcl21n15/Desktop/automatizar-pruebas-unitarias-2019-AureAle/CasosPrueba.txt";
-            String[] partes = null; String text = "";
-            using (var reader = new StreamReader(path))
-            {
-            while (!reader.EndOfStream)
-                {
-                
-                text = reader.ReadLine();
-                partes = text.Split(":");
-                }
-            } 
-
-        }
 
         /**
          * Calcula y regresa la media artimética
@@ -68,7 +45,7 @@ namespace AutomatizarPruebasUnitarias {
                producto = producto * vals[i];
             }
             
-            double mediaGeometrica= Math.Pow(producto,1/size); //raizEnesima(producto,size);
+            double mediaGeometrica= raizEnesima(producto,size); 
             return mediaGeometrica;
          }
 

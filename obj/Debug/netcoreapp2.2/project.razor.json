@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\gomez\\Desktop\\automatizar-pruebas-unitarias-2019-AureAle\\automatizar-pruebas-unitarias-2019-AureAle.csproj",
+  "TargetFramework": "netcoreapp2.2",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

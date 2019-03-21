@@ -1,0 +1,11 @@
+C:\Users\gomez\Desktop\automatizar-pruebas-unitarias-2019-AureAle\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-AureAle.csprojAssemblyReference.cache
+C:\Users\gomez\Desktop\automatizar-pruebas-unitarias-2019-AureAle\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-AureAle.csproj.CoreCompileInputs.cache
+C:\Users\gomez\Desktop\automatizar-pruebas-unitarias-2019-AureAle\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-AureAle.AssemblyInfoInputs.cache
+C:\Users\gomez\Desktop\automatizar-pruebas-unitarias-2019-AureAle\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-AureAle.AssemblyInfo.cs
+C:\Users\gomez\Desktop\automatizar-pruebas-unitarias-2019-AureAle\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-AureAle.deps.json
+C:\Users\gomez\Desktop\automatizar-pruebas-unitarias-2019-AureAle\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-AureAle.runtimeconfig.json
+C:\Users\gomez\Desktop\automatizar-pruebas-unitarias-2019-AureAle\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-AureAle.runtimeconfig.dev.json
+C:\Users\gomez\Desktop\automatizar-pruebas-unitarias-2019-AureAle\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-AureAle.dll
+C:\Users\gomez\Desktop\automatizar-pruebas-unitarias-2019-AureAle\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-AureAle.pdb
+C:\Users\gomez\Desktop\automatizar-pruebas-unitarias-2019-AureAle\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-AureAle.dll
+C:\Users\gomez\Desktop\automatizar-pruebas-unitarias-2019-AureAle\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-AureAle.pdb
