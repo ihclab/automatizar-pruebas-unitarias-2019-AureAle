@@ -53,7 +53,9 @@ namespace AutomatizarPruebasUnitarias {
          * Este método no está implementado
          */
         public static double mediaArmonica(params int[] vals) { 
-        return 0;
+            
+            Console.WriteLine("Este método no está implementado");
+            return 0;
         }
     }
     
