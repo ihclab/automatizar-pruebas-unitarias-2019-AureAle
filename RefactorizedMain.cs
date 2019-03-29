@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using AutomatizarPruebasUnitarias;
+using System.Diagnostics;
 
  class Test2{
         
@@ -11,6 +12,7 @@ using AutomatizarPruebasUnitarias;
         const string MEDIA_ARITMETICA = "mediaAritmetica";
         const string MEDIA_GEOMETRICA = "mediaGeometrica";
         const string MEDIA_ARMONICA = "mediaArmonica";
+       
 
     static void Main(string[] args){
 
@@ -18,26 +20,44 @@ using AutomatizarPruebasUnitarias;
             using (StreamReader sr = new StreamReader("C://Users//gomez//Desktop//automatizar-pruebas-unitarias-2019-AureAle//CasosPrueba.txt"))
             {
                 string linea;
-                //problema 02
+                var watch = new System.Diagnostics.Stopwatch();
+                var standardOutput = Console.Out;
+
+            using (StreamWriter writer = new StreamWriter("ResultadosPruebas.txt"))
+            {                        
+                Console.SetOut(writer);              
+                
+        
                 Console.WriteLine("ID     "+ "Resultado     "+ "Método    "+ "      Detalles    ");
-                while ((linea = sr.ReadLine()) != null)
+                while ((linea = sr.ReadLine()) != null) //problema 02
                 {
+                    watch.Start();
                     string[] lineaSeparada = separaLinea(linea);
                     procesaLinea(lineaSeparada);
-                   double  outputEsperado = OutputEsperado(lineaSeparada[OUTPUT]);
-                   double outputCalculado = OutputCalculado(lineaSeparada[METODO],lineaSeparada[INPUT]) ;
+                    double  outputEsperado = OutputEsperado(lineaSeparada[OUTPUT]);
+                    double outputCalculado = OutputCalculado(lineaSeparada[METODO],lineaSeparada[INPUT]) ;
                    
                    
-                   Console.Write("\n" + lineaSeparada[ID_LINEA]+ "   " ) ;
-                   imprimeResultadoMedia(lineaSeparada[INPUT], lineaSeparada[METODO], lineaSeparada[OUTPUT]);
-                   Console.Write("    "  + lineaSeparada[METODO] + "  "+  "Calculado =  "+ outputCalculado + "   "
-                   +"Esperado = " + outputEsperado );
-                   
-
+                    Console.Write("\n" + lineaSeparada[ID_LINEA]+ "   " ) ;
+                    imprimeResultadoMedia(lineaSeparada[INPUT], lineaSeparada[METODO], lineaSeparada[OUTPUT]);
+                    Console.Write("    "  + lineaSeparada[METODO] + "  ");
+                    if(lineaSeparada[METODO]!= "mediaArmonica"){
+                            Console.Write(  "Calculado =  "+ outputCalculado + "   " +"Esperado = " + outputEsperado +  "   " );
+                    }
+                    watch.Stop();
+                    if(lineaSeparada[METODO]!= "mediaArmonica"){
+                    Console.Write("T.E: "+ watch.ElapsedMilliseconds + "ms" );
+                    }
                 }
+                
+                Console.SetOut(standardOutput);
+            }
                    
             }        
     }
+private static void validarResultado(){
+    
+}
 
 private static string[] separaLinea(string linea) {//problema 03
       return linea.Split(':');
@@ -48,19 +68,20 @@ private static int[] parseaInput(string input) {//problema 04
 
 
 
-         string[] parametro = input.Split(' ');
+            string[] parametro = input.Split(' ');
             int[] vals = new int[parametro.Length];
             int nums = 0;
             int valor =0;
                 for(int j = 0; j < parametro.Length; j++)
                 {
+
                     bool succ = Int32.TryParse(parametro[j],out nums);
                     if(succ){
                         valor = nums;
                         }
                      else{
-                        //throw new System.FormatException("Parámetro incorrecto");
-                         validarNullEntradas(input);
+                        //throw new System.FormatException("Formato del parámetro incorrecto");
+                        
                      }
                     vals[j] = valor;
                 }
@@ -76,18 +97,13 @@ private static double parseaOutput(string output){//problema 04
       if(succ){
           result = calculado;
       }
-      /* else{
-          throw new System.FormatException("Parámetro incorrecto");
-      }   */
     
     return result;
 }
 
 private static void validarNullEntradas(string entrada){
 
-    if(entrada=="NULL"|| entrada== ""|| entrada=="null"){
-        Console.Write(entrada);
-    }
+   throw new FormatException("valor de entrada nulo");
 }
 private static void procesaLinea(string[] lineaSeparada) {
         parseaInput(lineaSeparada[INPUT]);
@@ -110,6 +126,8 @@ private static double OutputCalculado(string tipoMedia,string vals){
                     case MEDIA_GEOMETRICA:
                         result = md.mediaGeometrica(parseaInput(vals));                        
                         break;
+                   
+
                  
         }
         return result;
@@ -126,6 +144,9 @@ private static void imprimeResultadoMedia(string input, string tipoMedia,  strin
                         break;
                     case MEDIA_ARMONICA:
                         imprimeResultadoArmonica(input, resultadoEsperado);                      
+                        break;
+                    default:
+                        Console.Write("Método no encontrado");
                         break;
 
                 }

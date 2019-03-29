@@ -1,0 +1,2 @@
+0010:mediaGeometrica:0 0 0 0:Exception
+0011:mediaAritmetica:NULL:0.0000
